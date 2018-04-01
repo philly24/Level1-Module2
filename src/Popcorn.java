@@ -23,8 +23,8 @@ class Microwave {
 	}
 
 	void setTime(int cookTimeInMinutes) {
-		System.out.println("Microwave says: cook time is set to " + cookTime + " minutes.");
 		this.cookTime = cookTimeInMinutes;
+		System.out.println("Microwave says: cook time is set to " + cookTime + " minutes.");
 	}
 
 	void startMicrowave() {
