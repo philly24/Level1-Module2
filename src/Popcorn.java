@@ -6,7 +6,9 @@
 
 
 /* Your mission and you have to accept it:
- *         Add a main method to the Popcorn class to cook a bag of Popcorn. Don't change the existing methods.
+ * Create a PopcornMaker class and add a main method to it that creates a bag of Popcorn and cooks it in the microwave.
+ * Ask the user for the flavor of the popcorn and the number of minutes to cook it.
+ *  Don't change the existing methods.
  */
 
 class Microwave {
@@ -28,10 +30,13 @@ class Microwave {
 	}
 
 	void startMicrowave() {
-		if (thingToBeCooked == null)
+		if (thingToBeCooked == null) {
 			System.out.println("Microwave says: there's nothing in the microwave!");
-		for (int i = 0; i < cookTime*10 + 1; i++) {
-			thingToBeCooked.applyHeat();
+		} else {
+			for (int i = 0; i < cookTime * 10 + 1; i++) {
+				thingToBeCooked.applyHeat();
+			}
+			thingToBeCooked.eat();
 		}
 	}
 }
@@ -40,18 +45,26 @@ public class Popcorn {
 
 	private int kernels = 20;
 	private String flavor;
+	private boolean isCooked = false;
 
 	Popcorn(String flavor) {
 		this.flavor = flavor;
 		System.out.println("Popcorn says: making package of " + this.flavor + " popcorn.");
 	}
 
-
+	public void eat() {
+		if (isCooked) {
+			System.out.println("Popcorn says: Time to eat popcorn!");
+		} else {
+			System.out.println("Don't eat the popcorn. Not all the kernels have popped!");
+		}
+	}
+	
 	public void applyHeat() {
 		pause();
 
 		if (kernels == 0) {
-			System.out.println("Popcorn says: Time to eat popcorn!");
+			isCooked = true;
 		} else {
 			System.out.println("POP!" + kernels);
 			kernels--;
