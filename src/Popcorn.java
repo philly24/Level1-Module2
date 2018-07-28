@@ -1,3 +1,4 @@
+import javax.swing.JOptionPane;
 
 /*
  *    Copyright (c) The League of Amazing Programmers 2013-2017
@@ -19,11 +20,12 @@ class Microwave {
 		System.out.println("Microwave says: a Microwave has been made.");
 	}
 
+	
 	void putInMicrowave(Popcorn thingToBeCooked) {
 		System.out.println("Microwave says: popcorn put in microwave.");
 		this.thingToBeCooked = thingToBeCooked;
 	}
-
+	
 	void setTime(int cookTimeInMinutes) {
 		this.cookTime = cookTimeInMinutes;
 		System.out.println("Microwave says: cook time is set to " + cookTime + " minutes.");
@@ -46,7 +48,17 @@ public class Popcorn {
 	private int kernels = 20;
 	private String flavor;
 	private boolean isCooked = false;
-
+	
+	int getKernels() {
+		return kernels;	
+	}
+	String getFavor() {
+		return flavor;
+	}
+	
+	int add(int a , int b) {
+		return a+b;
+	}
 	Popcorn(String flavor) {
 		this.flavor = flavor;
 		System.out.println("Popcorn says: making package of " + this.flavor + " popcorn.");
